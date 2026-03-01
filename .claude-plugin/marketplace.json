@@ -1,0 +1,23 @@
+{
+  "name": "celestin-prudhomme",
+  "owner": {
+    "name": "Celestin Prud'homme",
+    "email": "celop.dev@gmail.com"
+  },
+  "metadata": {
+    "description": "Celestin Prud'homme's candidate profile for Anthropic \u2014 Staff Engineer, CI/CD specialist"
+  },
+  "plugins": [
+    {
+      "name": "celestin",
+      "source": "./plugins/celestin",
+      "version": "1.0.0",
+      "description": "Interactive candidate profile \u2014 ask questions, explore his stack, read his CV",
+      "category": "productivity",
+      "author": {
+        "name": "Celestin Prud'homme",
+        "email": "celop.dev@gmail.com"
+      }
+    }
+  ]
+}

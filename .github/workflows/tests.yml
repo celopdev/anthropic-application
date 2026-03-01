@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_call:
+
+jobs:
+  tests:
+    name: Validate plugin
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate JSON files
+        run: |
+          echo "── Checking JSON syntax ─────────────────────────────────"
+          find . -name "*.json" -not -path "./.git/*" | sort | while read -r f; do
+            python3 -c "import json,sys; json.load(open('$f'))" \
+              && echo "  ✓ $f" \
+              || { echo "  ✗ $f — invalid JSON"; exit 1; }
+          done
+
+      - name: Validate plugin structure and frontmatter
+        run: python3 .github/scripts/validate.py
+
+      - name: Lint shell scripts
+        run: |
+          echo "── Shellcheck ───────────────────────────────────────────"
+          sudo apt-get install -y shellcheck -q
+          find plugins/celestin/scripts -name "*.sh" | sort | while read -r f; do
+            shellcheck "$f" && echo "  ✓ $f" || exit 1
+          done

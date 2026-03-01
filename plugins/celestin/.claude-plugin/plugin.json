@@ -1,0 +1,18 @@
+{
+  "name": "celestin",
+  "description": "Celestin Prud'homme \u2014 Interactive candidate profile for Anthropic CI role. Includes a conversational agent and skills to explore his background, stack, and motivation.",
+  "author": {
+    "name": "Celestin Prud'homme",
+    "email": "celop.dev@gmail.com"
+  },
+  "homepage": "https://github.com/celopdev/anthropic-application#readme",
+  "repository": "https://github.com/celopdev/anthropic-application",
+  "keywords": [
+    "candidate",
+    "staff-engineer",
+    "ci-cd",
+    "aws",
+    "github-actions",
+    "anthropic"
+  ]
+}
