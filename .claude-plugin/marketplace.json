@@ -11,7 +11,7 @@
     {
       "name": "celestin",
       "source": "./plugins/celestin",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Interactive candidate profile \u2014 ask questions, explore his stack, read his CV",
       "category": "productivity",
       "author": {
